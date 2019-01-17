@@ -14,8 +14,8 @@ public class tictactoe {
 		System.out.println(board[2][0] + "|" + board[2][1] + "|" + board[2][2]);
 	}
 	
-	public static checkforwin() {
-		
+	public static void checkforwin() {
+		System.out.println("Player Wins");
 	}
 	
 	public static retrieveinput() {

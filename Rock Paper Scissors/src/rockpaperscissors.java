@@ -11,6 +11,7 @@ public class rockpaperscissors {
 		Random randNumGenerator = new Random();
 		int randNum = randNumGenerator.nextInt(3);
 		String ComputerRslt = CalcComputerHand(randNum);
+		System.out.println("Computer's Hand is :"+ ComputerRslt);
 		boolean valid = validateUserInput(userhand);
 		if (valid) {
 			String output = DeriveOutputmessage(userhand, ComputerRslt);
@@ -50,38 +51,38 @@ public class rockpaperscissors {
 	// Method to compare the user's input versus Computer's input and return the
 	// result
 	public static String CheckWinner(String user, String Comp) {
-		if (user == "Rock") {
-			if (Comp == "Paper") {
+		if (user.equals("Rock") ){
+			if (Comp.equals("Paper")) {
 				return "Computer";
 			} else {
 				return "User";
 			}
-		} else if (user == "Paper") {
-			if (Comp == "Scissors") {
+		} else if (user.equals("Paper")) {
+			if (Comp.equals("Scissors")) {
 				return "Computer";
 			} else {
 				return "User";
 			}
 		} else {
-			if (Comp == "Rock") {
+			if (Comp.equals("Rock")) {
 				return "Computer";
 			} else {
 				return "User";
 			}
 		}
+		
 	}
 
 	public static String DeriveOutputmessage(String userhand, String ComputerRslt) {
-
-		if (userhand == ComputerRslt) {// Check if User's input and Computer's input matches and display message
+		if (userhand.equals(ComputerRslt)) {// Check if User's input and Computer's input matches and display message
 										// accordingly
 			return " Match Drawn, Play again";
 		} else {
 			String win = CheckWinner(userhand, ComputerRslt);
-			if (win == "User") {
-				return " User won, congratulations!!";
+			if (win.equals("User")){
+				return "You won, Congratulations!!";
 			} else {
-				return " Computer wins, better luck next time";
+				return "Computer wins, better luck next time";
 			}
 		}
 	}
